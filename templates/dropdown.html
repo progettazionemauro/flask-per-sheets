@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p style="font-family:verdana">
+Choose Job Position Applying for:<SELECT name="jobid" style="font-family:verdana">
+{% for index in data %}
+	<OPTION value={{index[0]}}>{{index[1]}}</OPTION>
+{% endfor %}
+</SELECT>
+</p>
+{% endblock %}

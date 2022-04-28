@@ -6,7 +6,7 @@ from dominate.tags import img
 import gspread
 app = Flask('app')
 
-messages = [{'title': 'Messaggio UNO',
+titoli = [{'title': 'Messaggio UNO',
              'content': 'Message One Content'},
             {'title': 'Messaggio DUE',
              'content': 'Message Two Content'}
