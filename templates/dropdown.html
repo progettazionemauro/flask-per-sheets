@@ -1,11 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<form method="post">
 <p style="font-family:verdana">
-Choose Job Position Applying for:<SELECT name="jobid" style="font-family:verdana">
+OPERAZIONE GET DAL GOOGLE SHEET:<SELECT name="jobid" style="font-family:verdana">
 {% for index in data %}
 	<OPTION value={{index[0]}}>{{index[1]}}</OPTION>
 {% endfor %}
 </SELECT>
 </p>
+   <br>
+        <button type="submit">Submit</button>
+</form>
 {% endblock %}

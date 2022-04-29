@@ -1,5 +1,7 @@
 Flask is a minimal Python framework that helps you create a web server. 
 
+VEDERE QUESTO TUT: https://www.digitalocean.com/community/tutorials/how-to-use-web-forms-in-a-flask-application
+
 Let's take a look at the code we have:
 
 ```python
@@ -11,6 +13,7 @@ app = Flask(__name__)
 def hello_world():
     return "<h1>Hello, World!</h1>"
 ```
+Per la NAV bar seguire questo tut: https://www.digitalocean.com/community/tutorials/how-to-use-web-forms-in-a-flask-application
 	
 What did that code do?
 
