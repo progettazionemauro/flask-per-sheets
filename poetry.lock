@@ -97,6 +97,22 @@ flask = "*"
 visitor = "*"
 
 [[package]]
+name = "flask-wtf"
+version = "1.0.1"
+description = "Form rendering, validation, and CSRF protection for Flask with WTForms."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+Flask = "*"
+itsdangerous = "*"
+WTForms = "*"
+
+[package.extras]
+email = ["email-validator"]
+
+[[package]]
 name = "google-auth"
 version = "2.6.6"
 description = "Google Authentication Library"
@@ -313,7 +329,7 @@ email = ["email-validator"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "8a8022319959007dcdecde0f66730484cebc7c4e8f5c6f390f62bdb525ec3a09"
+content-hash = "f4caad2a9219835f8f41a0329967a2677b8eb5ffa9944c26184ed651f0990298"
 
 [metadata.files]
 cachetools = [
@@ -349,6 +365,10 @@ flask-bootstrap = [
 ]
 flask-nav = [
     {file = "flask-nav-0.6.tar.gz", hash = "sha256:44e40b755380a1e68ab521a2f9174de259a2c94ddcdaabf36b3aca2e110a33f4"},
+]
+flask-wtf = [
+    {file = "Flask-WTF-1.0.1.tar.gz", hash = "sha256:34fe5c6fee0f69b50e30f81a3b7ea16aa1492a771fe9ad0974d164610c09a6c9"},
+    {file = "Flask_WTF-1.0.1-py3-none-any.whl", hash = "sha256:9d733658c80be551ce7d5bc13c7a7ac0d80df509be1e23827c847d9520f4359a"},
 ]
 google-auth = [
     {file = "google-auth-2.6.6.tar.gz", hash = "sha256:1ba4938e032b73deb51e59c4656a00e0939cf0b1112575099f136babb4563312"},

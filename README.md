@@ -2,6 +2,8 @@ Flask is a minimal Python framework that helps you create a web server.
 
 VEDERE QUESTO TUT: https://www.digitalocean.com/community/tutorials/how-to-use-web-forms-in-a-flask-application
 
+Vedere Qui per il TUT su WTforms: https://www.digitalocean.com/community/tutorials/how-to-use-and-validate-web-forms-with-flask-wtf
+
 Let's take a look at the code we have:
 
 ```python

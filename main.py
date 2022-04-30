@@ -1,12 +1,23 @@
 from flask import Flask, render_template, request, url_for, flash, redirect
-from wtforms import Form, BooleanField, StringField, PasswordField, validators
+
 from flask_bootstrap import Bootstrap
 from flask_nav import Nav
 from flask_nav.elements import *
 from dominate.tags import img
 import gspread
+from forms import CourseForm
 
 app = Flask('app')
+app.config['SECRET_KEY'] = 'abc'
+
+courses_list = [{
+    'title': 'Python 101',
+    'description': 'Learn Python basics',
+    'price': 34,
+    'available': True,
+    'level': 'Beginner'
+    }]
+
 
 dati = [{
     'title': 'Messaggio UNO',
@@ -64,6 +75,11 @@ def drop_list():
         else:
             data[i][1]
     return render_template('dropdown.html', data=data[1:])
+
+@app.route('/course/', methods=('GET', 'POST'))
+def course():
+    form = CourseForm()
+    return render_template('course.html', form=form)
 
 
 
