@@ -4,6 +4,8 @@ VEDERE QUESTO TUT: https://www.digitalocean.com/community/tutorials/how-to-use-w
 
 Vedere Qui per il TUT su WTforms: https://www.digitalocean.com/community/tutorials/how-to-use-and-validate-web-forms-with-flask-wtf
 
+Vedere questo TUT per la gestione del DB: https://www.digitalocean.com/community/tutorials/how-to-use-an-sqlite-database-in-a-flask-application
+
 Let's take a look at the code we have:
 
 ```python

@@ -3,7 +3,7 @@
 {% block content %}
     <h1>{% block title %} Add a New Course {% endblock %}</h1>
 
-    <form method="POST" action="/">
+    <form method="POST" action="/course/">
         {{ form.csrf_token }}
         <p>
             {{ form.title.label }}
@@ -34,6 +34,7 @@
         <p>
             {{ form.price.label }}
             {{ form.price() }}
+          
         </p>
 
         {% if form.price.errors %}

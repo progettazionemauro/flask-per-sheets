@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, url_for, flash, redirect
+import sqlite3
 
 from flask_bootstrap import Bootstrap
 from flask_nav import Nav
@@ -13,7 +14,7 @@ app.config['SECRET_KEY'] = 'abc'
 courses_list = [{
     'title': 'Python 101',
     'description': 'Learn Python basics',
-    'price': 34,
+    'Price': 34,
     'available': True,
     'level': 'Beginner'
     }]
@@ -29,6 +30,37 @@ dati = [{
 sa = gspread.service_account(filename='./service_account.json')
 sh = sa.open("Copia di opensheet test")
 
+def get_db_connection():
+    conn = sqlite3.connect('database.db')
+    conn.row_factory = sqlite3.Row
+    return conn
+
+@app.route('/databasevista/')
+def data_base():
+    conn = get_db_connection()
+    posts = conn.execute('SELECT * FROM posts').fetchall()
+    conn.close()
+    return render_template('databasevista.html', posts=posts)
+
+@app.route('/databasecrea/', methods=('GET', 'POST'))
+def create_messaggio():
+    if request.method == 'POST':
+        title = request.form['title']
+        content = request.form['content']
+
+        if not title:
+            flash('Title is required!')
+        elif not content:
+            flash('Content is required!')
+        else:
+            conn = get_db_connection()
+            conn.execute('INSERT INTO posts (title, content) VALUES (?, ?)',
+                         (title, content))
+            conn.commit()
+            conn.close()
+            return redirect(url_for('data_base'))
+
+    return render_template('databasecrea.html')
 
 # @app.route('/')
 # def index1():
@@ -75,10 +107,22 @@ def drop_list():
         else:
             data[i][1]
     return render_template('dropdown.html', data=data[1:])
-
+# VEDERE QUESTO TUT: https://www.digitalocean.com/community/tutorials/how-to-use-and-validate-web-forms-with-flask-wtf
 @app.route('/course/', methods=('GET', 'POST'))
 def course():
     form = CourseForm()
+    if form.validate_on_submit():
+        courses_list.append({'title': form.title.data,
+                             'description': form.description.data,
+                             'price': form.price.data,
+                             'available': form.available.data,
+                             'level': form.level.data
+                             })
+        return redirect(url_for('course'))
+
+
+
+  
     return render_template('course.html', form=form)
 
 

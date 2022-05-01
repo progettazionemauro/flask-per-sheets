@@ -9,7 +9,7 @@ class CourseForm(FlaskForm):
     description = TextAreaField('Course Description',
                                 validators=[InputRequired(),
                                             Length(max=200)])
-    price = IntegerField('Price', validators=[InputRequired()])
+    price = IntegerField('Prezzo', validators=[InputRequired()])
     level = RadioField('Level',
                        choices=['Beginner', 'Intermediate', 'Advanced'],
                        validators=[InputRequired()])
