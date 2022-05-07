@@ -1,5 +1,7 @@
 Flask is a minimal Python framework that helps you create a web server. 
 
+Vedere Questo per POST/GET/UPDATE etc: https://betterprogramming.pub/integrating-google-sheets-api-with-python-flask-987d48b7674e
+
 VEDERE QUESTO TUT: https://www.digitalocean.com/community/tutorials/how-to-use-web-forms-in-a-flask-application
 
 Vedere Qui per il TUT su WTforms: https://www.digitalocean.com/community/tutorials/how-to-use-and-validate-web-forms-with-flask-wtf
